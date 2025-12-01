@@ -5,7 +5,6 @@
 kotlin = "2.2.21"
 springBoot = "4.0.0"
 springDependencyManagement = "1.1.7"
-exposed = "1.0.0-rc-4"
 jackson = "2.20.1"
 postgresql = "42.7.8"
 junit = "6.0.1"
@@ -21,9 +20,8 @@ springBootDevtools = { module = "org.springframework.boot:spring-boot-devtools",
 springBootStarterActuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springBoot" }
 springBootStarterDataJdbc = { module = "org.springframework.boot:spring-boot-starter-data-jdbc", version.ref = "springBoot" }
 springBootStarterDataRedis = { module = "org.springframework.boot:spring-boot-starter-data-redis", version.ref = "springBoot" }
-springBootStarterSessionJdbc = { module = "org.springframework.boot:spring-boot-starter-session-jdbc", version.ref = "springBoot" }
+springBootStarterDataJpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "springBoot" }
 springBootStarterWebmvc = { module = "org.springframework.boot:spring-boot-starter-webmvc", version.ref = "springBoot" }
-exposedSpringBootStarter = { module = "org.jetbrains.exposed:exposed-spring-boot-starter", version.ref = "exposed" }
 jacksonModuleKotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
 kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
@@ -46,9 +44,9 @@ springBootStarter = [
 ]
 
 data = [
+    "springBootStarterDataJpa",
     "springBootStarterDataJdbc",
     "springBootStarterDataRedis",
-    "exposedSpringBootStarter",
 ]
 
 jdbcDriver = [

@@ -24,7 +24,6 @@ dependencies {
     implementation(libs.bundles.springBootStarter)
     implementation(libs.bundles.data)
     implementation(libs.kotlinReflect)
-    implementation(libs.springBootStarterSessionJdbc)
     runtimeOnly(libs.bundles.jdbcDriver)
     annotationProcessor(libs.springBootConfigurationProcessor)
     developmentOnly(libs.springBootDevtools)
