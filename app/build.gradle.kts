@@ -16,19 +16,14 @@ configurations {
     }
 }
 
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     implementation(libs.bundles.springBootStarter)
-    implementation(libs.bundles.data)
+    implementation(libs.bundles.exposedData)
     implementation(libs.kotlinReflect)
-    implementation(libs.springBootStarterSessionJdbc)
     runtimeOnly(libs.bundles.jdbcDriver)
     annotationProcessor(libs.springBootConfigurationProcessor)
     developmentOnly(libs.springBootDevtools)
-    testImplementation(libs.bundles.springBootTest)
     testImplementation(libs.kotlinTestJunit5)
     testRuntimeOnly(libs.junitPlatformLauncher)
 }
