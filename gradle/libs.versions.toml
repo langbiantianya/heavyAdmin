@@ -1,0 +1,62 @@
+# Version catalog is a central place for you to declare and version dependencies
+# https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
+# https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
+[versions]
+kotlin = "2.2.21"
+springBoot = "4.0.0"
+springDependencyManagement = "1.1.7"
+exposed = "1.0.0-rc-4"
+jackson = "2.20.1"
+postgresql = "42.7.8"
+junit = "6.0.1"
+[libraries]
+# Libraries can be bundled together for easier import
+kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+springBootStarterDataJdbcTest = { module = "org.springframework.boot:spring-boot-starter-data-jdbc-test", version.ref = "springBoot" }
+springBootStarterSessionJdbcTest = { module = "org.springframework.boot:spring-boot-starter-session-jdbc-test", version.ref = "springBoot" }
+springBootStarterDataRedisTest = { module = "org.springframework.boot:spring-boot-starter-data-redis-test", version.ref = "springBoot" }
+springBootStarterWebmvcTest = { module = "org.springframework.boot:spring-boot-starter-webmvc-test", version.ref = "springBoot" }
+springBootConfigurationProcessor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "springBoot" }
+springBootDevtools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "springBoot" }
+springBootStarterActuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springBoot" }
+springBootStarterDataJdbc = { module = "org.springframework.boot:spring-boot-starter-data-jdbc", version.ref = "springBoot" }
+springBootStarterDataRedis = { module = "org.springframework.boot:spring-boot-starter-data-redis", version.ref = "springBoot" }
+springBootStarterSessionJdbc = { module = "org.springframework.boot:spring-boot-starter-session-jdbc", version.ref = "springBoot" }
+springBootStarterWebmvc = { module = "org.springframework.boot:spring-boot-starter-webmvc", version.ref = "springBoot" }
+exposedSpringBootStarter = { module = "org.jetbrains.exposed:exposed-spring-boot-starter", version.ref = "exposed" }
+jacksonModuleKotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
+kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+kotlinTestJunit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
+junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit" }
+[bundles]
+springBootTest = [
+    "springBootStarterDataJdbcTest",
+    "springBootStarterSessionJdbcTest",
+    "springBootStarterDataRedisTest",
+    "springBootStarterWebmvcTest",
+]
+
+springBootStarter = [
+    "springBootConfigurationProcessor",
+    "springBootStarterActuator",
+    "springBootStarterWebmvc",
+    "jacksonModuleKotlin",
+    "kotlinReflect",
+]
+
+data = [
+    "springBootStarterDataJdbc",
+    "springBootStarterDataRedis",
+    "exposedSpringBootStarter",
+]
+
+jdbcDriver = [
+    "postgresql",
+]
+
+[plugins]
+springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
+springDependencyManagement = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
+kotlinSpring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+
