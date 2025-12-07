@@ -51,4 +51,4 @@ plugins {
 
 rootProject.name = "heavyAdmin"
 
-include("system")
+include("admin")
