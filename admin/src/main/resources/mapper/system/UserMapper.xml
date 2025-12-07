@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lbty.admin.system.mapper.UserMapper">
+<mapper namespace="com.youlai.boot.system.mapper.UserMapper">
 
     <!-- 用户分页列表 -->
-    <select id="getUserPage" resultType="com.lbty.admin.system.model.bo.UserBO">
+    <select id="getUserPage" resultType="com.youlai.boot.system.model.bo.UserBO">
         SELECT
             u.id,
             u.username,
@@ -82,7 +82,7 @@
     </select>
 
     <!-- 用户表单信息映射 -->
-    <resultMap id="UserFormMap" type="com.lbty.admin.system.model.form.UserForm">
+    <resultMap id="UserFormMap" type="com.youlai.boot.system.model.form.UserForm">
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="username" column="username" jdbcType="VARCHAR"/>
         <result property="nickname" column="nickname" jdbcType="VARCHAR"/>
@@ -95,7 +95,7 @@
         <collection
                 property="roleIds"
                 column="id"
-                select="com.lbty.admin.system.mapper.UserRoleMapper.listRoleIdsByUserId" >
+                select="com.youlai.boot.system.mapper.UserRoleMapper.listRoleIdsByUserId" >
             <result column="role_id" />
         </collection>
     </resultMap>
@@ -119,7 +119,7 @@
     </select>
 
     <!-- 用户认证信息映射 -->
-    <resultMap id="AuthCredentialsMap" type="com.lbty.admin.security.model.UserAuthCredentials">
+    <resultMap id="AuthCredentialsMap" type="com.youlai.boot.security.model.UserAuthCredentials">
         <id property="userId" column="userId" jdbcType="BIGINT"/>
         <result property="username" column="username" jdbcType="VARCHAR"/>
         <result property="password" column="password" jdbcType="VARCHAR"/>
@@ -184,7 +184,7 @@
     </select>
 
     <!-- 获取用户导出列表 -->
-    <select id="listExportUsers" resultType="com.lbty.admin.system.model.dto.UserExportDTO">
+    <select id="listExportUsers" resultType="com.youlai.boot.system.model.dto.UserExportDTO">
         SELECT
             u.username,
             u.nickname,
@@ -225,7 +225,7 @@
     </select>
 
     <!-- 根据用户ID获取用户详情 -->
-    <select id="getUserProfile" resultType="com.lbty.admin.system.model.bo.UserBO">
+    <select id="getUserProfile" resultType="com.youlai.boot.system.model.bo.UserBO">
         SELECT
             u.id,
             u.username,

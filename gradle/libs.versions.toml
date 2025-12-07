@@ -59,6 +59,7 @@ knife4j = { module = "com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-s
 springdocOpenapiStarterWebmvcUi = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc" }
 #对象映射
 mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+mapstructProcessor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct" }
 #定时任务
 xxlJobCore = { module = "com.xuxueli:xxl-job-core", version.ref = "xxlJob" }
 #Excel工具
@@ -92,6 +93,7 @@ admin = [
     "knife4j",
     "springdocOpenapiStarterWebmvcUi",
     "mapstruct",
+    "mapstructProcessor",
     "xxlJobCore",
     "fastexcel",
     "minio",

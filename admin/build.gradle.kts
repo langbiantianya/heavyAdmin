@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlinSpring)
 }
 
-group = "com.lbty"
+group = "com.youlai.boot"
 version = "0.0.1-SNAPSHOT"
 description = "Demo project for Spring Boot"
 
@@ -20,9 +20,15 @@ configurations {
 dependencies {
     implementation(libs.bundles.admin)
     implementation(libs.bundles.mybatisData)
+
     runtimeOnly(libs.bundles.jdbcDriver)
-    compileOnly(libs.lombokMapstructBinding)
+
     compileOnly(libs.lombok)
     annotationProcessor(libs.lombok)
+
+    compileOnly(libs.lombokMapstructBinding)
+    annotationProcessor(libs.lombokMapstructBinding)
+
+    annotationProcessor(libs.mapstructProcessor)
     annotationProcessor(libs.springBootConfigurationProcessor)
 }
